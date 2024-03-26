@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <Content Include="*.gif" CopyToOutputDirectory="Always"/>
+    <Content Include="*.png" CopyToOutputDirectory="Always"/>
   </ItemGroup>
 
 </Project>
