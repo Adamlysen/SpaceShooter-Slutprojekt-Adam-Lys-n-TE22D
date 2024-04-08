@@ -27,10 +27,13 @@ while (!Raylib.WindowShouldClose())
     }
     else if (Game)
     {
+        int playerX = 205;
+        int playerY = 600;
+
         Raylib.BeginDrawing();
         Raylib.DrawTexture(bgtexture, 0, 0, Color.White);
-        Raylib.DrawTexture(PlayerTexture, 205, 600, Color.White);
-        Raylib.EndDrawing();
+        Raylib.DrawTexture(PlayerTexture, playerX, playerY, Color.White);
+        Raylib.EndDrawing();        
     }
 
     else if (!Game && !Start)
