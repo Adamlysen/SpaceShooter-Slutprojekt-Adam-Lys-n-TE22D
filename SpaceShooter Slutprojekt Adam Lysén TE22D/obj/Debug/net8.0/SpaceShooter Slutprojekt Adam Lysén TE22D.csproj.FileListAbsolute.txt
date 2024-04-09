@@ -21,5 +21,5 @@ c:\Users\Adam.lysen\Desktop\VS CODE\SpaceShooter Slutprojekt Adam Lysén TE22D\S
 c:\Users\Adam.lysen\Desktop\VS CODE\SpaceShooter Slutprojekt Adam Lysén TE22D\SpaceShooter Slutprojekt Adam Lysén TE22D\obj\Debug\net8.0\SpaceShooter Slutprojekt Adam Lysén TE22D.genruntimeconfig.cache
 c:\Users\Adam.lysen\Desktop\VS CODE\SpaceShooter Slutprojekt Adam Lysén TE22D\SpaceShooter Slutprojekt Adam Lysén TE22D\obj\Debug\net8.0\ref\SpaceShooter Slutprojekt Adam Lysén TE22D.dll
 c:\Users\Adam.lysen\Desktop\VS CODE\SpaceShooter Slutprojekt Adam Lysén TE22D\SpaceShooter Slutprojekt Adam Lysén TE22D\obj\Debug\net8.0\SpaceShooter Slutprojekt Adam Lysén TE22D.sourcelink.json
-c:\Users\Adam.lysen\Desktop\VS CODE\SpaceShooter Slutprojekt Adam Lysén TE22D\SpaceShooter Slutprojekt Adam Lysén TE22D\bin\Debug\net8.0\spacebg4.png
 c:\Users\Adam.lysen\Desktop\VS CODE\SpaceShooter Slutprojekt Adam Lysén TE22D\SpaceShooter Slutprojekt Adam Lysén TE22D\bin\Debug\net8.0\Spaceship2.png
+c:\Users\Adam.lysen\Desktop\VS CODE\SpaceShooter Slutprojekt Adam Lysén TE22D\SpaceShooter Slutprojekt Adam Lysén TE22D\bin\Debug\net8.0\spacebgdotspng.png

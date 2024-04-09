@@ -6,7 +6,7 @@ using Raylib_cs;
 Raylib.SetTargetFPS(60);
 Raylib.InitWindow(506, 900, "SpaceShooter");
 
-Texture2D bgtexture = Raylib.LoadTexture(@"spacebg4.png");
+Texture2D bgtexture = Raylib.LoadTexture(@"spacebgdotspng.png");
 Texture2D PlayerTexture = Raylib.LoadTexture(@"Spaceship2.png");
 bool Game = false;
 bool Start = true;
@@ -31,7 +31,6 @@ while (!Raylib.WindowShouldClose())
     else if (Game)
     {
         Raylib.BeginDrawing();
-        Raylib.DrawTexture(bgtexture, 0, 0, Color.White);
         Raylib.DrawTexture(PlayerTexture, player.Xpos, player.Ypos, Color.White);
         Raylib.EndDrawing();
 
