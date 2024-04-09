@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wBwRIMjO8HXSziu+x47apdYL28D3DKjJSxwed/s2RNFDOFAdIA/DYdqW1sQqUAayBDhtowSxeWjWgLgVT3liew==",
+  "dgSpecHash": "8wIHwUMzi78Tvgue/qPteDz77YnRBYYX6y1/b9shw6ldZiQvPbYrNqiWgFZ+d4phs26JXwQG5YPaYLR9nMEWVg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\spind\\programmmmm\\SpaceShooter-Slutprojekt-Adam-Lys-n-TE22D\\SpaceShooter Slutprojekt Adam Lysén TE22D\\SpaceShooter Slutprojekt Adam Lysén TE22D.csproj",
+  "projectFilePath": "C:\\Users\\spind\\programmmmm\\SpaceShooter-Slutprojekt-Adam-Lys-n-TE22D\\SpaceShooter Slutprojekt Adam Lysén TE22D\\SpaceShooter Slutprojekt Adam Lysén TE22D.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\spind\\.nuget\\packages\\raylib-cs\\6.0.0\\raylib-cs.6.0.0.nupkg.sha512",
     "C:\\Users\\spind\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
