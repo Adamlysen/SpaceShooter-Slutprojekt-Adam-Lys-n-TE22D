@@ -10,9 +10,8 @@ Texture2D bgtexture = Raylib.LoadTexture(@"spacebg4.png");
 Texture2D PlayerTexture = Raylib.LoadTexture(@"Spaceship2.png");
 bool Game = false;
 bool Start = true;
-int playerX = 205;
-int playerY = 600;
-int playerSpeed = 4;
+
+Player player = new Player();
 
 while (!Raylib.WindowShouldClose())
 {
@@ -33,25 +32,12 @@ while (!Raylib.WindowShouldClose())
     {
         Raylib.BeginDrawing();
         Raylib.DrawTexture(bgtexture, 0, 0, Color.White);
-        Raylib.DrawTexture(PlayerTexture, playerX, playerY, Color.White);
+        Raylib.DrawTexture(PlayerTexture, player.Xpos, player.Ypos, Color.White);
         Raylib.EndDrawing();
 
-        if (Raylib.IsKeyDown(KeyboardKey.D))
-        {
-            playerX += playerSpeed;
-        }
-        if (Raylib.IsKeyDown(KeyboardKey.A))
-        {
-            playerX -= playerSpeed;
-        }
-        if (Raylib.IsKeyDown(KeyboardKey.S))
-        {
-            playerY += playerSpeed;
-        }
-        if (Raylib.IsKeyDown(KeyboardKey.W))
-        {
-            playerY -= playerSpeed;
-        }
+        player.PlayerMove();
+        player.EdgeCollision();
+        
     }
 
     else if (!Game && !Start)
