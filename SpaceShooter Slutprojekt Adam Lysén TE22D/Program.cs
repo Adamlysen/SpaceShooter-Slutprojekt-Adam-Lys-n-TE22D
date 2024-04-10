@@ -37,11 +37,13 @@ while (!Raylib.WindowShouldClose())
         Raylib.BeginDrawing();
         background.BackScroll();
         Raylib.DrawTexture(PlayerTexture, player.Xpos, player.Ypos, Color.White);
-        Raylib.EndDrawing();
+
 
         player.PlayerMove();
         player.EdgeCollision();
-
+        player.Shoot();
+        
+        Raylib.EndDrawing();
     }
 
     else if (!Game && !Start)

@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using Raylib_cs;
 
 class Player
@@ -6,6 +7,8 @@ class Player
     public int Xpos = 205;
     public int Ypos = 600;
     public int Speed = 4;
+    public int PlayerCenterX;
+    public int PlayerCenterY;
 
     public void PlayerMove()
     {
@@ -46,6 +49,16 @@ class Player
             Ypos = 1;
         }
     }
+
+    public void Shoot()
+    {
+        if (Raylib.IsKeyPressed(KeyboardKey.Enter))
+        {
+            Raylib.DrawRectangle(PlayerCenterX, PlayerCenterY, 5, 20, Color.Red);
+        }
+    }
+
+
 
 
 }
