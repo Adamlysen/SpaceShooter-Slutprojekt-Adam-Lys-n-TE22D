@@ -52,13 +52,14 @@ class Player
 
     public void Shoot()
     {
+        PlayerCenterX = Xpos + 45;
+        PlayerCenterY = Ypos + 20;
         if (Raylib.IsKeyPressed(KeyboardKey.Enter))
         {
-            Raylib.DrawRectangle(PlayerCenterX, PlayerCenterY, 5, 20, Color.Red);
+            Raylib.BeginDrawing();
+            Raylib.DrawRectangle(PlayerCenterX, PlayerCenterY - 1000, 5, 1000, Color.Red);
+            PlayerCenterY -= 10;
+            Raylib.EndDrawing();
         }
     }
-
-
-
-
 }
