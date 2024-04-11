@@ -1,14 +1,14 @@
+using System.Data.Common;
 using Raylib_cs;
 
 class Bullet
 {
     public const int MaxBullets = 100;
-    public int BulletSpeed = 10;
+    public int BulletSpeed = 15;
     public Rectangle[] bullets = new Rectangle[MaxBullets];
     public bool[] BulletActive = new bool[MaxBullets];
-    Player player = new Player();
 
-    public void Shoot()
+    public void Shoot(int BpX, int BpY)
     {
         if (Raylib.IsKeyPressed(KeyboardKey.Enter))
         {
@@ -16,7 +16,7 @@ class Bullet
             {
                 if (!BulletActive[i])
                 {
-                    bullets[i] = new Rectangle(player.Xpos + 45, player.Ypos + 20, 5, 15);
+                    bullets[i] = new Rectangle(BpX + 50, BpY + 20, 5, 15);
                     BulletActive[i] = true;
                     break;
                 }

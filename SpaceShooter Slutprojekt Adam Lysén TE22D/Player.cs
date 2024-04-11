@@ -6,7 +6,7 @@ class Player
 {
     public int Xpos = 205;
     public int Ypos = 600;
-    public int Speed = 4;
+    public int Speed = 5;
     public int PlayerCenterX;
     public int PlayerCenterY;
 

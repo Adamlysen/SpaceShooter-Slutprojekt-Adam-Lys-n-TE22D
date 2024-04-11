@@ -9,13 +9,14 @@ Raylib.InitWindow(506, 900, "SpaceShooter");
 Texture2D PlayerTexture = Raylib.LoadTexture(@"Spaceship2.png");
 bool Game = false;
 bool Start = true;
-
-Player player = new Player();
 Background background = new Background();
-Bullet bullet= new Bullet();
+Player player = new Player();
+Bullet bullet = new Bullet();
 
 while (!Raylib.WindowShouldClose())
 {
+
+
     if (Start)
     {
         Raylib.BeginDrawing();
@@ -37,16 +38,13 @@ while (!Raylib.WindowShouldClose())
     {
         Raylib.BeginDrawing();
         background.BackScroll();
-        bullet.Shoot();
-        Raylib.DrawTexture(PlayerTexture, player.Xpos, player.Ypos, Color.White);
-        
-        Raylib.EndDrawing();
-
-        
         player.PlayerMove();
         player.EdgeCollision();
-        
+        bullet.Shoot(player.Xpos, player.Ypos);
 
+        Raylib.DrawTexture(PlayerTexture, player.Xpos, player.Ypos, Color.White);
+
+        Raylib.EndDrawing();
     }
 
     else if (!Game && !Start)
