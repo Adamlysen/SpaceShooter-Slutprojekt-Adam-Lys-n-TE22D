@@ -12,6 +12,7 @@ bool Start = true;
 
 Player player = new Player();
 Background background = new Background();
+Bullet bullet= new Bullet();
 
 while (!Raylib.WindowShouldClose())
 {
@@ -36,17 +37,16 @@ while (!Raylib.WindowShouldClose())
     {
         Raylib.BeginDrawing();
         background.BackScroll();
-        
+        bullet.Shoot();
         Raylib.DrawTexture(PlayerTexture, player.Xpos, player.Ypos, Color.White);
+        
         Raylib.EndDrawing();
 
-
+        
         player.PlayerMove();
         player.EdgeCollision();
-        player.Shoot();
         
 
-        
     }
 
     else if (!Game && !Start)
@@ -63,7 +63,6 @@ static void CountDown()
 
     Raylib.DrawText("3", 252, 400, 50, Color.White);
     Raylib.EndDrawing();
-    Console.Beep();
     Thread.Sleep(1000);
 
     Raylib.BeginDrawing();
@@ -71,7 +70,6 @@ static void CountDown()
 
     Raylib.DrawText("2", 252, 400, 50, Color.White);
     Raylib.EndDrawing();
-    Console.Beep();
     Thread.Sleep(1000);
 
     Raylib.BeginDrawing();
@@ -79,7 +77,6 @@ static void CountDown()
 
     Raylib.DrawText("1", 252, 400, 50, Color.White);
     Raylib.EndDrawing();
-    Console.Beep();
     Thread.Sleep(1000);
 }
 
