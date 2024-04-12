@@ -11,9 +11,10 @@ bool Game = false;
 bool Start = true;
 Background background = new Background();
 Player player = new Player();
-Bullet bullet = new Bullet();
+
 Score score = new Score();
 Enemy enemy = new Enemy();
+Bullet bullet = new Bullet();
 
 while (!Raylib.WindowShouldClose())
 {
@@ -43,12 +44,17 @@ while (!Raylib.WindowShouldClose())
 
         player.PlayerMove();
         player.EdgeCollision();
-        bullet.Shoot(player.Xpos, player.Ypos);
+        bullet.Shoot(player.Xpos, player.Ypos, enemy, score);
         enemy.EnemySpawn();
 
         Raylib.DrawTexture(PlayerTexture, player.Xpos, player.Ypos, Color.White);
-        score.ScoreCount();
+        score.ScoreCount(enemy.DelayTime);
         Raylib.EndDrawing();
+
+        if (Raylib.IsKeyPressed(KeyboardKey.Escape))
+        {
+            Raylib.CloseWindow();
+        }
     }
 
     else if (!Game && !Start)
@@ -63,21 +69,21 @@ static void CountDown()
     Raylib.BeginDrawing();
     Raylib.ClearBackground(Color.Gray);
 
-    Raylib.DrawText("3", 252, 400, 50, Color.White);
+    Raylib.DrawText("3", 252, 400, 50, Color.Black);
     Raylib.EndDrawing();
     Thread.Sleep(1000);
 
     Raylib.BeginDrawing();
     Raylib.ClearBackground(Color.Gray);
 
-    Raylib.DrawText("2", 252, 400, 50, Color.White);
+    Raylib.DrawText("2", 252, 400, 50, Color.Black);
     Raylib.EndDrawing();
     Thread.Sleep(1000);
 
     Raylib.BeginDrawing();
     Raylib.ClearBackground(Color.Gray);
 
-    Raylib.DrawText("1", 252, 400, 50, Color.White);
+    Raylib.DrawText("1", 252, 400, 50, Color.Black);
     Raylib.EndDrawing();
     Thread.Sleep(1000);
 }

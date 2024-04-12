@@ -1,5 +1,4 @@
-using System.Data.Common;
-using System.Reflection.Metadata;
+using System;
 using Raylib_cs;
 
 class Bullet
@@ -8,9 +7,17 @@ class Bullet
     public int BulletSpeed = 15;
     public Rectangle[] bullets = new Rectangle[MaxBullets];
     public bool[] BulletActive = new bool[MaxBullets];
+    Enemy enemy;
 
-    public void Shoot(int BpX, int BpY)
+    Score score;
+    
+
+    public void Shoot(int BpX, int BpY, Enemy enemy, Score score)
     {
+        this.enemy = enemy; // Förstår ej än
+        this.score = score; // Förstår ej än
+        
+
         if (Raylib.IsKeyPressed(KeyboardKey.Enter))
         {
             for (int i = 0; i < MaxBullets; i++)
@@ -36,6 +43,22 @@ class Bullet
                 else
                 {
                     Raylib.DrawRectangleRec(bullets[i], Color.Red);
+                }
+            }
+        }
+
+        for (int i = 0; i < MaxBullets; i++)
+        {
+            if (BulletActive[i])
+            {
+                for (int j = 0; j < Enemy.MaxEnemies; j++)
+                {
+                    if (enemy.EnemyActive[j] && Raylib.CheckCollisionRecs(bullets[i], enemy.Enemies[j]))
+                    {
+                        BulletActive[i] = false;
+                        enemy.EnemyActive[j] = false;
+                        score.score++;
+                    }
                 }
             }
         }
