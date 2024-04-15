@@ -48,7 +48,7 @@ while (!Raylib.WindowShouldClose())
         enemy.EnemySpawn();
 
         Raylib.DrawTexture(PlayerTexture, player.Xpos, player.Ypos, Color.White);
-        score.ScoreCount(enemy.DelayTime);
+        score.ScoreCount(enemy);
         Raylib.EndDrawing();
 
         if (Raylib.IsKeyPressed(KeyboardKey.Escape))

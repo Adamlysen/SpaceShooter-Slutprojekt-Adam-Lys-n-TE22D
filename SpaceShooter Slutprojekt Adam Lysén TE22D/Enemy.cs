@@ -7,13 +7,14 @@ class Enemy
     public bool[] EnemyActive = new bool[MaxEnemies];
     public Rectangle[] Enemies = new Rectangle[MaxEnemies];
     float TimeSinceLastSpawn = 0;
-    public int DelayTime;
+    public double DelayTime = 3;
+    Score score;
 
     public void EnemySpawn()
     {
         TimeSinceLastSpawn += Raylib.GetFrameTime();
 
-        DelayTime = 3;
+        // DelayTime = 3;
 
         if (TimeSinceLastSpawn >= DelayTime)
         {
