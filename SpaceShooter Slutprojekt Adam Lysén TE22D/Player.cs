@@ -10,21 +10,22 @@ class Player
     public int PlayerCenterX;
     public int PlayerCenterY;
 
+    public bool CanMove = true;
     public void PlayerMove()
     {
-        if (Raylib.IsKeyDown(KeyboardKey.D))
+        if (Raylib.IsKeyDown(KeyboardKey.D) && CanMove)
         {
             Xpos += Speed;
         }
-        if (Raylib.IsKeyDown(KeyboardKey.A))
+        if (Raylib.IsKeyDown(KeyboardKey.A) && CanMove)
         {
             Xpos -= Speed;
         }
-        if (Raylib.IsKeyDown(KeyboardKey.S))
+        if (Raylib.IsKeyDown(KeyboardKey.S) && CanMove)
         {
             Ypos += Speed;
         }
-        if (Raylib.IsKeyDown(KeyboardKey.W))
+        if (Raylib.IsKeyDown(KeyboardKey.W) && CanMove)
         {
             Ypos -= Speed;
         }

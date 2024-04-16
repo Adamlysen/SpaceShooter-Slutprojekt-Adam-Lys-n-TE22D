@@ -8,16 +8,20 @@ class Enemy
     public Rectangle[] Enemies = new Rectangle[MaxEnemies];
     float TimeSinceLastSpawn = 0;
     public double DelayTime = 3;
+
+    public float enemyspeed = 2;
+
+    public bool death = false;
     Score score;
     Player player;
+    Background background;
+    Program Program;
 
     public int deathradius = 0;
 
 
-    public void EnemySpawn(Rectangle playerrectangle)
+    public void EnemySpawn(Rectangle playerrectangle, Background background, Player player)
     {
-
-        
 
         TimeSinceLastSpawn += Raylib.GetFrameTime();
 
@@ -41,10 +45,11 @@ class Enemy
         {
             if (EnemyActive[i])
             {
-                Enemies[i].Y += 2;
+                Enemies[i].Y += enemyspeed;
                 if (Enemies[i].Y >= 900)
                 {
                     EnemyActive[i] = false;
+                    death = true;
                 }
                 else
                 {
@@ -59,11 +64,24 @@ class Enemy
             {
                 if (Raylib.CheckCollisionRecs(Enemies[i], playerrectangle))
                 {
-                    EnemyActive[i] = false;
-                    Raylib.DrawCircle(player.Xpos - 50, player.Ypos - 50, deathradius, Color.Red);
-
-                    deathradius += 5;
+                    death = true;
                 }
+            }
+        }
+
+        if (death)
+        {
+            enemyspeed = 0;
+            background.bgspeed = 0;
+            player.CanMove = false;
+            Raylib.DrawCircle(player.Xpos + 30, player.Ypos + 30, deathradius, Color.Red);
+            deathradius += 20;
+            if (deathradius >= 1000)
+            {
+                deathradius += 0;
+                Program.Start = false;
+                Program.Game = false;
+                
             }
         }
     }
