@@ -9,9 +9,16 @@ class Enemy
     float TimeSinceLastSpawn = 0;
     public double DelayTime = 3;
     Score score;
+    Player player;
 
-    public void EnemySpawn()
+    public int deathradius = 0;
+
+
+    public void EnemySpawn(Rectangle playerrectangle)
     {
+
+        
+
         TimeSinceLastSpawn += Raylib.GetFrameTime();
 
         // DelayTime = 3;
@@ -42,6 +49,20 @@ class Enemy
                 else
                 {
                     Raylib.DrawRectangleRec(Enemies[i], Color.Purple);
+                }
+            }
+        }
+
+        for (int i = 0; i < MaxEnemies; i++)
+        {
+            if ((EnemyActive[i]))
+            {
+                if (Raylib.CheckCollisionRecs(Enemies[i], playerrectangle))
+                {
+                    EnemyActive[i] = false;
+                    Raylib.DrawCircle(player.Xpos - 50, player.Ypos - 50, deathradius, Color.Red);
+
+                    deathradius += 5;
                 }
             }
         }

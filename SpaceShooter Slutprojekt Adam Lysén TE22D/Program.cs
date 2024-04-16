@@ -12,9 +12,13 @@ bool Start = true;
 Background background = new Background();
 Player player = new Player();
 
+Program program = new Program();
+
 Score score = new Score();
 Enemy enemy = new Enemy();
 Bullet bullet = new Bullet();
+
+
 
 while (!Raylib.WindowShouldClose())
 {
@@ -41,13 +45,15 @@ while (!Raylib.WindowShouldClose())
     {
         Raylib.BeginDrawing();
         background.BackScroll();
-
+        Rectangle playerrec = new Rectangle(player.Xpos + 15, player.Ypos, 75, 70);
         player.PlayerMove();
         player.EdgeCollision();
-        bullet.Shoot(player.Xpos, player.Ypos, enemy, score);
-        enemy.EnemySpawn();
-
+        bullet.Shoot(player.Xpos, player.Ypos, enemy, score, background);
+        enemy.EnemySpawn(playerrec);
+        Raylib.DrawRectangleRec(playerrec, Color.Blank);
         Raylib.DrawTexture(PlayerTexture, player.Xpos, player.Ypos, Color.White);
+        
+        
         score.ScoreCount(enemy);
         Raylib.EndDrawing();
 

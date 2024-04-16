@@ -10,12 +10,14 @@ class Bullet
     Enemy enemy;
 
     Score score;
+    Background Background;
     
 
-    public void Shoot(int BpX, int BpY, Enemy enemy, Score score)
+    public void Shoot(int BpX, int BpY, Enemy enemy, Score score, Background background)
     {
         this.enemy = enemy; // Förstår ej än
         this.score = score; // Förstår ej än
+        this.Background = background; // Förstår ej än
         
 
         if (Raylib.IsKeyPressed(KeyboardKey.Enter))
