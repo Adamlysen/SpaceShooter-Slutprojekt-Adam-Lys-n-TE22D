@@ -6,7 +6,7 @@ class Background
 {
 
     Texture2D bgtexture = Raylib.LoadTexture(@"spacebgdotspng.png");
-     public int bgspeed = 1;
+    public int bgspeed = 1;
     int Xpos = 0;
     int Ypos = 0;
     int ScreenHeight = 900;

@@ -79,9 +79,21 @@ class Enemy
             if (deathradius >= 1000)
             {
                 deathradius += 0;
+                deathradius = 0;
                 Program.Start = false;
                 Program.Game = false;
-                
+                death = false;
+            }
+        }
+    }
+
+    public void ResetEnemy()
+    {
+        for (int i = 0; i < MaxEnemies; i++)
+        {
+            if (EnemyActive[i])
+            {
+                EnemyActive[i] = false;
             }
         }
     }
