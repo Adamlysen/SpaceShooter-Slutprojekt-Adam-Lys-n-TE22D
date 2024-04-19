@@ -5,7 +5,7 @@ class Bullet
 {
     public const int MaxBullets = 100;
     public int BulletSpeed = 15;
-    public Rectangle[] bullets = new Rectangle[MaxBullets];
+    public Rectangle[] bullets = new Rectangle[MaxBullets];   
     public bool[] BulletActive = new bool[MaxBullets];
     Enemy enemy;
 
@@ -19,7 +19,7 @@ class Bullet
         {
             for (int i = 0; i < MaxBullets; i++)
             {
-                if (!BulletActive[i])
+                if (!BulletActive[i])                                     // Denna for loop skapar bullets
                 {
                     bullets[i] = new Rectangle(BpX + 50, BpY + 20, 5, 15);
                     BulletActive[i] = true;
@@ -33,7 +33,7 @@ class Bullet
             if (BulletActive[i])
             {
                 bullets[i].Y -= BulletSpeed;
-                if (bullets[i].Y + bullets[i].Height <= 0)
+                if (bullets[i].Y + bullets[i].Height <= 0)               // Denna for loop ritar ut bullets         
                 {
                     BulletActive[i] = false;
                 }
@@ -53,8 +53,8 @@ class Bullet
                     if (enemy.EnemyActive[j] && Raylib.CheckCollisionRecs(bullets[i], enemy.Enemies[j]))
                     {
                         BulletActive[i] = false;
-                        enemy.EnemyActive[j] = false;
-                        score.score++;
+                        enemy.EnemyActive[j] = false;            // Två for loopar som kollar om man träffar fienden
+                        score.score++;                           // Vid träff så ökar poäng med 1
                     }
                 }
             }

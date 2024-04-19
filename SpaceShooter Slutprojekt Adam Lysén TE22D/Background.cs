@@ -18,7 +18,7 @@ class Background
 
         Ypos += bgspeed;
 
-        if (Ypos == ScreenHeight)
+        if (Ypos == ScreenHeight)        
         {
             Ypos = 0;
         }

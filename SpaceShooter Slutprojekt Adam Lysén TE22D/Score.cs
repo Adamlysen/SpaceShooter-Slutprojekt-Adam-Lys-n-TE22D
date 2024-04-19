@@ -9,7 +9,7 @@ class Score
     string level = "Level 1";
     double time = 0;
     Enemy enemy;
-    public void ScoreCount(Enemy enemy)
+    public void ScoreCount(Enemy enemy) // Tar hand om poängräkningen och svårighetsgraden
     {
 
         time += Raylib.GetFrameTime();

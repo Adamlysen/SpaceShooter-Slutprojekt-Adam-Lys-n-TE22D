@@ -11,7 +11,7 @@ class Player
     public int PlayerCenterY;
 
     public bool CanMove = true;
-    public void PlayerMove()
+    public void PlayerMove()  
     {
         if (Raylib.IsKeyDown(KeyboardKey.D) && CanMove)
         {
@@ -50,17 +50,4 @@ class Player
             Ypos = 1;
         }
     }
-
-    // public void Shoot()
-    // {
-    //     PlayerCenterX = Xpos + 45;
-    //     PlayerCenterY = Ypos + 20;
-    //     if (Raylib.IsKeyPressed(KeyboardKey.Enter))
-    //     {
-    //         Raylib.BeginDrawing();
-    //         Raylib.DrawRectangle(PlayerCenterX, PlayerCenterY - 1000, 5, 1000, Color.Red);
-    //         PlayerCenterY -= 10;
-    //         Raylib.EndDrawing();
-    //     }
-    // }
 }
