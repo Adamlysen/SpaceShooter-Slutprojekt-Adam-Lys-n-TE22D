@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SpaceShooter Slutprojekt Adam Lysén TE22D")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+114137459706c25cf0c177fdfc12e1fafa505965")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5dc19de452750d952b9c56f2b69f16f66e8035b7")]
 [assembly: System.Reflection.AssemblyProductAttribute("SpaceShooter Slutprojekt Adam Lysén TE22D")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SpaceShooter Slutprojekt Adam Lysén TE22D")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

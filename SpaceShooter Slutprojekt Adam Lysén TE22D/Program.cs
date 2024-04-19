@@ -95,23 +95,23 @@ class Program
     static void CountDown()  // Skapar en countdown som räknar ner innan spelet börjar
     {
         Raylib.BeginDrawing();
-        Raylib.ClearBackground(Color.Gray);
+        Raylib.ClearBackground(Color.Black);
 
-        Raylib.DrawText("3", 252, 400, 50, Color.Black);
+        Raylib.DrawText("3", 252, 400, 50, Color.White);
         Raylib.EndDrawing();
         Thread.Sleep(1000);   // Pausa i en sekund 
 
         Raylib.BeginDrawing();
-        Raylib.ClearBackground(Color.Gray);
-
-        Raylib.DrawText("2", 252, 400, 50, Color.Black);
+        Raylib.ClearBackground(Color.Black);
+        
+        Raylib.DrawText("2", 252, 400, 50, Color.White);
         Raylib.EndDrawing();
         Thread.Sleep(1000);
 
         Raylib.BeginDrawing();
-        Raylib.ClearBackground(Color.Gray);
+        Raylib.ClearBackground(Color.Black);
 
-        Raylib.DrawText("1", 252, 400, 50, Color.Black);
+        Raylib.DrawText("1", 252, 400, 50, Color.White);
         Raylib.EndDrawing();
         Thread.Sleep(1000);
     }

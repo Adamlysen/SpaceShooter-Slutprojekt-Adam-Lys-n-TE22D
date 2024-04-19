@@ -33,7 +33,7 @@ class Enemy
             {
                 if (!EnemyActive[i])                    //  For loop som skapar fienderna 
                 {
-                    Enemies[i] = new Rectangle(Random.Shared.Next(60, 450), -25, 25, 25); 
+                    Enemies[i] = new Rectangle(Random.Shared.Next(75, 430), -25, 25, 25); 
                     EnemyActive[i] = true;                 // Skapar fienderna vid en randomized X position
                     break;            // Avlutar loopen när fienden har spawnats
                 }
