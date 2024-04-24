@@ -9,7 +9,7 @@ Klass Bullet
     score: en instans av Score
     background: en instans av Background
 
-    Funktion Shoot(BpX, BpY, enemy, score, background)
+    Funktion Shoot(Parametrar)
         Om Knappen Enter är nedtryckt
             För varje i från 0 till MaxBullets
                 Om inte BulletActive[i] är sann
