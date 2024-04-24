@@ -1,0 +1,34 @@
+Pseudokod som förklarar skapandet av bullets i Bullet.cs:
+
+Klass Bullet
+    Konstant MaxBullets = 100
+    BulletSpeed = 15
+    bullets: en lista med MaxBullets rektanglar
+    BulletActive: en lista med MaxBullets true or false värden
+    enemy: en instans av Enemy
+    score: en instans av Score
+    background: en instans av Background
+
+    Funktion Shoot(BpX, BpY, enemy, score, background)
+        Om Knappen Enter är nedtryckt
+            För varje i från 0 till MaxBullets
+                Om inte BulletActive[i] är sann
+                    Skapa en ny rektangel vid (BpX + 50, BpY + 20) med bredd 5 och höjd 15
+                    Sätt BulletActive[i] till sann
+                    Bryt loopen
+
+        För varje i från 0 till MaxBullets
+            Om BulletActive[i] är sann
+                Flytta rektangeln bullets[i] uppåt med BulletSpeed enheter
+                Om rektangelns Y-koordinat plus dess höjd är mindre än eller lika med 0
+                    Sätt BulletActive[i] till falsk
+                Annars
+                    Rita ut rektangeln bullets[i] i färgen röd
+
+        För varje i från 0 till MaxBullets
+            Om BulletActive[i] är sann
+                För varje j från 0 till Enemy.MaxEnemies
+                    Om EnemyActive[j] är sann och det finns en kollision mellan bullets[i] och Enemies[j]
+                        Sätt BulletActive[i] till falsk
+                        Sätt EnemyActive[j] till falsk
+                        Öka poängen med 1

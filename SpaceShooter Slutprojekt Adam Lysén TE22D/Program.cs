@@ -27,6 +27,8 @@ class Program
                 Raylib.ClearBackground(Color.White);
                 Raylib.DrawText("Press Enter", 125, 200, 40, Color.Black);
                 Raylib.DrawText("To Start", 150, 260, 40, Color.Black);
+                Raylib.DrawText("Move: WASD", 130, 350, 40, Color.Black);
+                Raylib.DrawText("Shoot: ENTER", 115, 420, 40, Color.Black);
                 Raylib.EndDrawing();
 
                 if (Raylib.IsKeyPressed(KeyboardKey.Enter))
@@ -59,6 +61,7 @@ class Program
             {
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.Red);
+                Raylib.DrawText($"{score.score}", 225, 100, 50, Color.Black);
                 Raylib.DrawText("You Died", 150, 175, 50, Color.Black);
                 Raylib.DrawText("Press Enter To Play Again", 50, 275, 30, Color.Black);
                 Raylib.DrawText("Press ESC to Exit", 110, 375, 30, Color.Black);
